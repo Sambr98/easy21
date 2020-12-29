@@ -29,6 +29,7 @@ def plotValueFunction(Q, path):
 
 def plotMSEsPerLambda(MSEs, lambdas, path):
 	plt.plot(lambdas, MSEs, marker='o')
+	plt.title('Mean Squared Error per Lambda')
 	plt.xlabel('Lambda')
 	plt.ylabel('MSE')
 	plt.savefig(path + 'td.png')
@@ -38,6 +39,7 @@ def plotMSEsPerEpisode(MSEs, lambdas, path):
 	for i in range(len(lambdas)):
 		plt.plot(MSEs[i], label=lambdas[i])
 	plt.legend()
+	plt.title('Mean Squared Error per Episode')
 	plt.xlabel('Episode')
 	plt.ylabel('MSE')
 	plt.savefig(path + 'td_.png')
