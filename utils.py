@@ -12,6 +12,16 @@ def selectAction(d, p, Q, N):
 
 	return action
 
+def selectActionConstant(d, p, Q, theta):
+	epsilon = 0.05
+
+	if (np.random.random() < epsilon):
+		action = np.random.choice([0,1])
+	else:
+		action = np.argmax([Q(d, p, a, theta) for a in [0,1]])
+
+	return action
+
 def plotValueFunction(Q, path):
 	dealerCard = []
 	playerSum = []
